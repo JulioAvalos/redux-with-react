@@ -5,14 +5,16 @@ export const saveResult = (res) => {
     // normally used to retrieve some data from a server (asynchronously)
     return {
         type: actionTypes.STORE_RESULT,
-        result: updatedResult
+        result: res
     };
 }
 
 export const storeResult = (res) => {
-    return dispatch => {
+    return (dispatch, getState) => {
         // sample: doing a simulation about asynchronous code execution
         setTimeout(() =>{
+            // const oldCounter = getState().ctr.counter;
+            // console.log(oldCounter);
             dispatch(saveResult(res));
         }, 2000);
     }
