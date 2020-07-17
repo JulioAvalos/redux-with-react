@@ -1,9 +1,11 @@
 import * as actionTypes from './actionTypes';
 
 export const saveResult = (res) => {
+    // const updatedResult = res * 2; // should put too much login in actionCreators
+    // normally used to retrieve some data from a server (asynchronously)
     return {
         type: actionTypes.STORE_RESULT,
-        result: res
+        result: updatedResult
     };
 }
 

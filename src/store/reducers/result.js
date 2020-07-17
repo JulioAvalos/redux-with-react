@@ -7,11 +7,12 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.STORE_RESULT: 
-        
+            // reducers are the best to handle extra logic
             return {
                 ...state,
                 // result: state.results.push() // dont: still keeps the reference of the original object!
-                results: state.results.concat({id: new Date(), value: action.result})
+                
+                results: state.results.concat({id: new Date(), value: action.result * 2})
             }
         case actionTypes.DELETE_RESULT: 
             // filter returns a new array!
